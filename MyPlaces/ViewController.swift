@@ -43,12 +43,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = restaurantNames[indexPath.row]
         cell.imageView?.image = UIImage(named: restaurantNames[indexPath.row])
+        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
+        cell.imageView?.clipsToBounds = true
         return cell
     }
 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
+    // MARK: - Table view delegate
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
     }
 }
 
