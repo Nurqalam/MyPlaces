@@ -157,6 +157,23 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="AL0-r7-n0a">
+                                        <rect key="frame" x="0.0" y="588" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AL0-r7-n0a" id="zNO-iK-LAj">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dok-F5-J4O" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                    <rect key="frame" x="77" y="38" width="260" height="44"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dok-F5-J4O" firstAttribute="centerX" secondItem="zNO-iK-LAj" secondAttribute="centerX" id="4GM-Gj-qhI"/>
+                                                <constraint firstItem="dok-F5-J4O" firstAttribute="centerY" secondItem="zNO-iK-LAj" secondAttribute="centerY" id="VWF-aL-L0W"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -199,7 +216,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lat-2F-Pjs">
-                                <rect key="frame" x="0.0" y="124" width="414" height="772"/>
+                                <rect key="frame" x="0.0" y="172" width="414" height="724"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -265,7 +282,10 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i9L-zb-4ia">
-                                <rect key="frame" x="0.0" y="88" width="414" height="37"/>
+                                <rect key="frame" x="0.0" y="132" width="409" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="J7b-39-xTr"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Name"/>
@@ -278,11 +298,9 @@
                         <viewLayoutGuide key="safeArea" id="o2m-tJ-XrG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="o2m-tJ-XrG" firstAttribute="trailing" secondItem="i9L-zb-4ia" secondAttribute="trailing" id="0Tf-Hn-oTy"/>
-                            <constraint firstItem="i9L-zb-4ia" firstAttribute="top" secondItem="o2m-tJ-XrG" secondAttribute="top" id="AGV-A0-EDb"/>
-                            <constraint firstItem="lat-2F-Pjs" firstAttribute="top" secondItem="i9L-zb-4ia" secondAttribute="bottom" id="Csh-sX-xhp"/>
-                            <constraint firstItem="lat-2F-Pjs" firstAttribute="top" secondItem="i9L-zb-4ia" secondAttribute="bottom" id="Xdh-od-lKY"/>
-                            <constraint firstItem="i9L-zb-4ia" firstAttribute="leading" secondItem="o2m-tJ-XrG" secondAttribute="leading" id="c0t-nC-ru5"/>
+                            <constraint firstItem="o2m-tJ-XrG" firstAttribute="trailing" secondItem="i9L-zb-4ia" secondAttribute="trailing" constant="5" id="4pc-qR-tog"/>
+                            <constraint firstItem="i9L-zb-4ia" firstAttribute="leading" secondItem="o2m-tJ-XrG" secondAttribute="leading" id="PG7-8W-Zbk"/>
+                            <constraint firstItem="lat-2F-Pjs" firstAttribute="top" secondItem="i9L-zb-4ia" secondAttribute="bottom" constant="5" id="PUe-lP-VBU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="kfS-X0-WJi">
