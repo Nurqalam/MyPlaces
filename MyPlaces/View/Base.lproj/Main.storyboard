@@ -164,7 +164,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dok-F5-J4O" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="260" placeholderIntrinsicHeight="44" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dok-F5-J4O" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
                                                     <rect key="frame" x="77" y="38" width="260" height="44"/>
                                                 </stackView>
                                             </subviews>
@@ -365,6 +365,11 @@
             <point key="canvasLocation" x="691" y="-542"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="dok-F5-J4O">
+            <size key="intrinsicContentSize" width="260" height="44"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="xMD-wm-iPm"/>
     </inferredMetricsTieBreakers>
