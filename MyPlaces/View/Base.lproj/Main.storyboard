@@ -11,6 +11,8 @@
         <!--New Place-->
         <scene sceneID="IKl-Vs-um8">
             <objects>
+                <exit id="3jI-EV-fd5" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bkn-3d-PDv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="yEG-Su-XfQ" customClass="NewPlacesViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="X2p-ED-XdE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -31,11 +33,26 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="275"/>
                                                     <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y39-Lo-jRK">
+                                                    <rect key="frame" x="344" y="214" width="55" height="55"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="QG2-6B-fcx"/>
+                                                        <constraint firstAttribute="width" constant="55" id="QKA-Qb-OjP"/>
+                                                    </constraints>
+                                                    <state key="normal" image="mapIcon"/>
+                                                    <connections>
+                                                        <segue destination="nKg-eB-dQd" kind="popoverPresentation" identifier="showMap" popoverAnchorView="Y39-Lo-jRK" id="NGr-t4-fXt">
+                                                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                        </segue>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Ocp-aN-H43" secondAttribute="trailing" id="YkS-55-2yY"/>
+                                                <constraint firstItem="Y39-Lo-jRK" firstAttribute="trailing" secondItem="kzy-1K-8fB" secondAttribute="trailingMargin" constant="5" id="eHR-MK-MZu"/>
                                                 <constraint firstItem="Ocp-aN-H43" firstAttribute="leading" secondItem="kzy-1K-8fB" secondAttribute="leading" id="fXA-X3-QqF"/>
                                                 <constraint firstItem="Ocp-aN-H43" firstAttribute="top" secondItem="kzy-1K-8fB" secondAttribute="top" id="h3f-IX-BKd"/>
+                                                <constraint firstItem="Y39-Lo-jRK" firstAttribute="bottom" secondItem="kzy-1K-8fB" secondAttribute="bottomMargin" constant="5" id="rWd-N8-HSz"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ocp-aN-H43" secondAttribute="bottom" id="z4Q-cZ-rdP"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -222,10 +239,67 @@
                         <outlet property="saveButton" destination="GQH-Gq-aeX" id="SI9-am-Ksu"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bkn-3d-PDv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="3jI-EV-fd5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="689.85507246376812" y="160.71428571428569"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="xO7-CD-Uzl">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Gr-SP-66a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="nKg-eB-dQd" customClass="MapViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uKe-Ra-F17">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="73f-Ba-ZgV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE7-t8-sh5">
+                                <rect key="frame" x="299" y="45" width="75" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="Pdl-FQ-MZz"/>
+                                    <constraint firstAttribute="height" constant="60" id="ssl-Rr-rSI"/>
+                                </constraints>
+                                <state key="normal" image="exitIcon"/>
+                                <connections>
+                                    <action selector="exitPressed:" destination="nKg-eB-dQd" eventType="touchUpInside" id="hha-0N-87O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fok-XE-YxT">
+                                <rect key="frame" x="309" y="703" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="TCN-Vo-g2d"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="aWw-Ff-AD4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" image="paperplane.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="centerView" destination="nKg-eB-dQd" eventType="touchUpInside" id="Ay9-sG-Mf4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qnc-Cp-7a7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fok-XE-YxT" firstAttribute="leading" secondItem="qnc-Cp-7a7" secondAttribute="leading" constant="309" id="BMh-l6-EbY"/>
+                            <constraint firstItem="LE7-t8-sh5" firstAttribute="top" secondItem="qnc-Cp-7a7" secondAttribute="top" constant="45" id="K8i-wD-riL"/>
+                            <constraint firstItem="73f-Ba-ZgV" firstAttribute="trailing" secondItem="qnc-Cp-7a7" secondAttribute="trailing" id="OGb-HQ-FT0"/>
+                            <constraint firstItem="73f-Ba-ZgV" firstAttribute="leading" secondItem="qnc-Cp-7a7" secondAttribute="leading" id="OXv-72-wxh"/>
+                            <constraint firstAttribute="bottom" secondItem="73f-Ba-ZgV" secondAttribute="bottom" id="btm-vL-bu0"/>
+                            <constraint firstItem="qnc-Cp-7a7" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fok-XE-YxT" secondAttribute="trailing" id="c8m-ET-dK2"/>
+                            <constraint firstItem="qnc-Cp-7a7" firstAttribute="bottom" secondItem="fok-XE-YxT" secondAttribute="bottom" constant="40" id="dpB-Ua-5JI"/>
+                            <constraint firstItem="73f-Ba-ZgV" firstAttribute="top" secondItem="uKe-Ra-F17" secondAttribute="top" id="pz4-Un-LoD"/>
+                            <constraint firstItem="qnc-Cp-7a7" firstAttribute="trailing" secondItem="LE7-t8-sh5" secondAttribute="trailing" constant="40" id="qDy-wt-r7e"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="73f-Ba-ZgV" id="Xfe-LQ-EMw"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1465.217391304348" y="169.41964285714286"/>
         </scene>
         <!--My Places-->
         <scene sceneID="RzT-yL-Y6l">
@@ -417,6 +491,9 @@
     <resources>
         <image name="Photo" width="195" height="196"/>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
+        <image name="exitIcon" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="mapIcon" width="75" height="75"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

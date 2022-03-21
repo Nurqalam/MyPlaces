@@ -66,5 +66,7 @@
 	<string>photo use</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Library useage</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>For directions to ur fav place, and get adress</string>
 </dict>
 </plist>
